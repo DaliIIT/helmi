@@ -1,0 +1,40 @@
+/*.modal {*/
+  /*position: fixed; !* Stay in place *!*/
+  /*z-index: 999999; !* Sit on top *!*/
+  /*padding-top: 10vw; !* Location of the box *!*/
+  /*left: 0;*/
+  /*top: 0;*/
+  /*width: 100%; !* Full width *!*/
+  /*height: 100%; !* Full height *!*/
+  /*background-color: rgb(0,0,0); !* Fallback color *!*/
+  /*background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!*/
+  /*overflow-y: scroll;*/
+/*}*/
+
+.modal-content {
+  background-color: #ffff;
+  margin: auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/*.close {*/
+  /*background-color: white;*/
+  /*border-radius: 30px;*/
+  /*padding: 0.3rem;*/
+  /*margin-top: -2vh;*/
+  /*margin-right:8%;*/
+  /*display: block;*/
+  /*color: dodgerblue;*/
+  /*float: right;*/
+  /*font-size: 1.3rem;*/
+  /*font-weight: bold;*/
+/*}*/
+
+/*.close:hover,*/
+/*.close:focus {*/
+  /*color: aqua;*/
+  /*text-decoration: none;*/
+  /*cursor: pointer;*/
+/*}*/

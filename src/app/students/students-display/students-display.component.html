@@ -1,0 +1,89 @@
+<div *ngFor="let classroom of classrooms" >
+<div class="flex-parent">
+  <reus-card *ngFor="let student of classroom.students" class="card"
+             [image]="student.picture"
+             [title]="student.firstName + ' ' + student.lastName"
+             [btns]="[{text: 'EDIT',style:'primary'},{text: 'DELETE',style:'danger'}]"
+             [bubble]="{content : classroom.field, backgroundColor: 'green'}"
+             [content]="['age : '+student.age , 'gender: '+student.gender]"
+             (click)="cardBtnClicked($event , student, classroom.field , deleteModal ,editModal )"
+  ></reus-card>
+</div>
+</div>
+
+<!-- The Modal -->
+<div appModal #deleteModal>
+  <!-- Modal content -->
+  <div appModalContent>
+    <p>delete {{currentStudent?.firstName +' '+ currentStudent?.lastName}} ?</p>
+    <button [appReusBtn]="'danger'"> YES ?</button>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div appModal #editModal>
+  <!-- Modal content -->
+  <div appModalContent>
+    <p>edit {{currentStudent?.firstName +' '+ currentStudent?.lastName}} ?</p>
+
+    <form #f="ngForm" (ngSubmit)="editStudent(f)">
+      <table>
+
+        <tr>
+          <td>
+            <label for="" class="col-form-label">Edit FirstName</label>
+          </td>
+          <td>
+            <input [ngModel]="currentStudent?.firstName" name="firstname" #firstname class="form-control" required>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="" class="col-form-label">Edit LastName</label>
+          </td>
+          <td>
+            <input [ngModel]="currentStudent?.lastName" name="lastname" #lastname class="form-control" required>
+          </td>
+
+        </tr>
+
+        <!--<tr>-->
+          <!--<td>-->
+            <!--<label for="" class="col-form-label">Edit LastName</label>-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<input [ngModel]="currentStudent?.lastName" name="lastname" #lastname class="form-control" required>-->
+          <!--</td>-->
+        <!--</tr>-->
+
+        <tr>
+          <td>
+            <label for="" class="col-form-label">Edit Age</label>
+          </td>
+          <td>
+            <input  type="number" [ngModel]="currentStudent?.age" name="age" #age class="form-control" required>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+          <label for="" class="col-form-label">Edit gender</label>
+          </td>
+          <td>
+          <input [ngModel]="currentStudent?.gender" name="gender" #gender class="form-control" required>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+        <button type="submit" [appReusBtn]="'primary'" >save</button>
+          </td>
+        </tr>
+
+      </table>
+    </form>
+  </div>
+</div>
+
+<!--<button (click)="open(modal)" >fghjkl</button>-->

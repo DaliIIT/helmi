@@ -1,0 +1,22 @@
+<div class="card">
+
+
+  <span *ngIf="bubble !== {}" [appIndicatorBuble]="bubble">{{bubble?.content}}</span>
+
+  <div class="picture">
+    <img [src]="image" alt="student-pic">
+  </div>
+
+  <div class="content">
+    <h1>{{title}}</h1>
+    <p *ngFor="let cont of content">
+      {{cont}}
+    </p>
+  </div>
+  <span *ngIf=" btns !== undefined ">
+     <hr>
+<div class="flex-parent">
+  <a *ngFor="let btn of btns; let i = index " href="#" [appReusBtn]="btn.style" class="btn" (click)="btnclick(btn)"> {{btn.text}}</a>
+</div>
+  </span>
+</div>
