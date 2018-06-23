@@ -1,0 +1,9 @@
+<div class="navbar">
+  <form>
+    <select (change)="setLanguage(lang)" #lang style="margin-top: 10px ; margin-right: 3px">
+      <option>EN</option>
+      <option>FR</option>
+    </select>
+    <input type="text" (keyup)="setSearchText($event)" >
+  </form>
+</div>

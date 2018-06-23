@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {StudentsDisplayComponent} from './students-display/students-display.component';
 import {ReusableModule} from '../myModules/reusable/reusable.module';
 import {FormsModule} from '@angular/forms';
+import {DataService} from '../services/dataShare/data.service';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import {FormsModule} from '@angular/forms';
   declarations: [
     StudentsDisplayComponent,
   ],
-  providers: [],
+  providers: [DataService],
   exports: [
     StudentsDisplayComponent
   ]

@@ -4,5 +4,6 @@ export interface STUDENTS {
   lastName: string;
   age: number;
   gender: string;
+  field: string;
   picture: string;
 }

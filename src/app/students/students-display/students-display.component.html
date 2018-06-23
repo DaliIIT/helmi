@@ -1,22 +1,22 @@
-<div *ngFor="let classroom of classrooms" >
-<div class="flex-parent">
-  <reus-card *ngFor="let student of classroom.students" class="card"
+
+<div class="flex-parent" style="margin-top: 60px">
+  <reus-card *ngFor="let student of students" class="card"
              [image]="student.picture"
              [title]="student.firstName + ' ' + student.lastName"
              [btns]="[{text: 'EDIT',style:'primary'},{text: 'DELETE',style:'danger'}]"
-             [bubble]="{content : classroom.field, backgroundColor: 'green'}"
+             [bubble]="{content : student.field, backgroundColor: 'green'}"
              [content]="['age : '+student.age , 'gender: '+student.gender]"
-             (click)="cardBtnClicked($event , student, classroom.field , deleteModal ,editModal )"
+             (click)="cardBtnClicked($event , student, deleteModal ,editModal )"
   ></reus-card>
 </div>
-</div>
+
 
 <!-- The Modal -->
 <div appModal #deleteModal>
   <!-- Modal content -->
   <div appModalContent>
     <p>delete {{currentStudent?.firstName +' '+ currentStudent?.lastName}} ?</p>
-    <button [appReusBtn]="'danger'"> YES ?</button>
+    <button [appReusBtn]="'danger'" (click)="deleteStudent()"> YES ?</button>
   </div>
 </div>
 
